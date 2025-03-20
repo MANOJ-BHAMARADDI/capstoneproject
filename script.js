@@ -55,12 +55,12 @@ const handleOutgoingMessage = () => {
 They can be solved using the quadratic formula:  
 x = (-b ± √(b² - 4ac)) / 2a.  
 
-For example, solving **x² - 4x + 4 = 0**:  
+For example, solving x² - 4x + 4 = 0  
 1. Identify coefficients: a = 1, b = -4, c = 4  
 2. Compute discriminant: (-4)² - 4(1)(4) = 0  
 3. Solve: x = (-(-4) ± √0) / (2 * 1) = 2  
 
-Since the discriminant is 0, we have only one solution: **x = 2**.`;
+Since the discriminant is 0, we have only one solution: x = 2.`;
     } 
     else if (isQuadraticEquation(currentUserMessage)) {
         requestApiResponse();
@@ -82,7 +82,7 @@ Since the discriminant is 0, we have only one solution: **x = 2**.`;
     // Append bot's response
     const incomingMessageHtml = `
         <div class="message__content">
-            <img class="message__avatar" src="assets/gemini.svg" alt="Gemini avatar">
+            <img class="message__avatar">
             <p class="message__text"></p>
         </div>
     `;
@@ -108,7 +108,7 @@ const requestApiResponse = async () => {
     // Show loading
     const loadingMessageHtml = `
         <div class="message__content">
-            <img class="message__avatar" src="assets/gemini.svg" alt="Gemini avatar">
+            <img class="message__avatar" alt="avatar">
             <p class="message__text">Solving...</p>
             <div class="message__loading-indicator">
                 <div class="message__loading-bar"></div>
@@ -138,7 +138,7 @@ const requestApiResponse = async () => {
         chatHistoryContainer.removeChild(loadingMessageElement);
         const responseMessageHtml = `
             <div class="message__content">
-                <img class="message__avatar" src="assets/gemini.png" alt="Gemini avatar">
+                <img class="message__avatar">
                 <p class="message__text"></p>
             </div>
         `;
@@ -152,7 +152,7 @@ const requestApiResponse = async () => {
         chatHistoryContainer.removeChild(loadingMessageElement);
         const errorMessageHtml = `
             <div class="message__content">
-                <img class="message__avatar" src="assets/gemini.png" alt="Gemini avatar">
+                <img class="message__avatar">
                 <p class="message__text">⚠️ Error: ${error.message}</p>
             </div>
         `;
