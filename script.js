@@ -138,7 +138,7 @@ const requestApiResponse = async () => {
         chatHistoryContainer.removeChild(loadingMessageElement);
         const responseMessageHtml = `
             <div class="message__content">
-                <img class="message__avatar" src="assets/gemini.svg" alt="Gemini avatar">
+                <img class="message__avatar" src="assets/gemini.png" alt="Gemini avatar">
                 <p class="message__text"></p>
             </div>
         `;
@@ -152,7 +152,7 @@ const requestApiResponse = async () => {
         chatHistoryContainer.removeChild(loadingMessageElement);
         const errorMessageHtml = `
             <div class="message__content">
-                <img class="message__avatar" src="assets/gemini.svg" alt="Gemini avatar">
+                <img class="message__avatar" src="assets/gemini.png" alt="Gemini avatar">
                 <p class="message__text">⚠️ Error: ${error.message}</p>
             </div>
         `;
