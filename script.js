@@ -7,16 +7,16 @@ const clearChatButton = document.getElementById("deleteButton");
 let currentUserMessage = null;
 let isGeneratingResponse = false;
 
-const GOOGLE_API_KEY = "AIzaSyCzGevf1eQGLV5kMv-zl0Hrdaz6R1iyP1I"; // 🔹 Replace with your actual API key
+const GOOGLE_API_KEY = "AIzaSyCzGevf1eQGLV5kMv-zl0Hrdaz6R1iyP1I"; 
 const API_REQUEST_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GOOGLE_API_KEY}`;
 
-// ✅ Improved Quadratic Equation Detector
+//  Improved Quadratic Equation Detector
 const isQuadraticEquation = (message) => {
     return /([-+]?\d*)?x\s*\²\s*([-+]\s*\d*x)?\s*([-+]\s*\d+)?\s*=\s*0/i.test(message) || 
            /([-+]?\d*)?x\^2\s*([-+]\s*\d*x)?\s*([-+]\s*\d+)?\s*=\s*0/i.test(message);
 };
 
-// ✅ Create chat message element
+//  Create chat message element
 const createChatMessageElement = (htmlContent, ...cssClasses) => {
     const messageElement = document.createElement("div");
     messageElement.classList.add("message", ...cssClasses);
@@ -24,7 +24,7 @@ const createChatMessageElement = (htmlContent, ...cssClasses) => {
     return messageElement;
 };
 
-// ✅ Show typing effect
+//  Show typing effect
 const showTypingEffect = (text, messageElement) => {
     let index = 0;
     messageElement.innerText = "";
@@ -38,7 +38,7 @@ const showTypingEffect = (text, messageElement) => {
     }, 50);
 };
 
-// ✅ Handle different types of user input
+//  Handle different types of user input
 const handleOutgoingMessage = () => {
     currentUserMessage = messageForm.querySelector(".prompt__form-input").value.trim().toLowerCase();
     if (!currentUserMessage || isGeneratingResponse) return;
@@ -95,7 +95,7 @@ Since the discriminant is 0, we have only one solution: x = 2.`;
     isGeneratingResponse = false;
 };
 
-// ✅ Fetch API response for quadratic equation solving
+//  Fetch API response for quadratic equation solving
 const requestApiResponse = async () => {
     const outgoingMessageHtml = `
         <div class="message__content">
@@ -160,7 +160,7 @@ const requestApiResponse = async () => {
     }
 };
 
-// ✅ Event Listeners
+//  Event Listeners
 messageForm.addEventListener('submit', (e) => {
     e.preventDefault();
     handleOutgoingMessage();
