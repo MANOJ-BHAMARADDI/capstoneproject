@@ -7,7 +7,7 @@ const clearChatButton = document.getElementById("deleteButton");
 let currentUserMessage = null;
 let isGeneratingResponse = false;
 
-const GOOGLE_API_KEY = "AIzaSyCzGevf1eQGLV5kMv-zl0Hrdaz6R1iyP1I"; 
+const GOOGLE_API_KEY = "your_api_key"; 
 const API_REQUEST_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GOOGLE_API_KEY}`;
 
 //  Improved Quadratic Equation Detector
